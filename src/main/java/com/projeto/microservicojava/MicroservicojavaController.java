@@ -15,22 +15,23 @@ import net.minidev.json.JSONObject;
 public class MicroservicojavaController {
 	 
     private final AtomicLong counter = new AtomicLong();
+    Greeting greeting = new Greeting();
+
     
 //    ,name,cache
     
     @RequestMapping("/greeting")
     public JSONObject geting() {
-        Greeting greeting = new Greeting();
     	  
-    	return greeting.putInJson();
+    	return greeting.getAll();
     }
     
     @RequestMapping("/posting")
     public String postJson(String name, String cache) {
-        Greeting greeting = new Greeting();
         greeting.setId(counter.incrementAndGet());
         greeting.setName(name);
         greeting.setCache("R$"+cache+".00");
+        greeting.saveJson();
         
         return "salvou";
     	

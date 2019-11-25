@@ -11,12 +11,9 @@ public class Greeting {
     private String name;
     private String cache;
     
-    private JSONObject obj = new JSONObject();
    // private ArrayList<String> listName, listCache = new ArrayList();
-    
-    
+    static DataConfig data = new DataConfig();
 
-    
     
    public JSONObject putInJson() {
 
@@ -39,10 +36,14 @@ public class Greeting {
     	return this.cache;
     }
     
-    public String getAll() {
-    	return "oooeee - rrrrr";
+    public JSONObject getAll() {
+    	return data.getJson();
     }
     
+    public void saveJson() {
+    	data.saveDados(getId(),getName(), getCache());
+    }
+        
     public void setId(long id) {
         this.id = id;
     }
