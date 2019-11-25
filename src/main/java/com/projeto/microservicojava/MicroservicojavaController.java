@@ -1,5 +1,6 @@
 package com.projeto.microservicojava;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
@@ -21,7 +22,7 @@ public class MicroservicojavaController {
 //    ,name,cache
     
     @RequestMapping("/greeting")
-    public JSONObject geting() {
+    public String geting() throws IOException {
     	  
     	return greeting.getAll();
     }

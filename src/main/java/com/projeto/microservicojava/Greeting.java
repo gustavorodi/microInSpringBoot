@@ -1,5 +1,6 @@
 package com.projeto.microservicojava;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import net.minidev.json.JSONArray;
@@ -36,7 +37,7 @@ public class Greeting {
     	return this.cache;
     }
     
-    public JSONObject getAll() {
+    public String getAll() throws IOException {
     	return data.getJson();
     }
     
